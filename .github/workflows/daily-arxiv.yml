@@ -35,7 +35,7 @@ jobs:
             --api_key "${{ secrets.SILICONFLOW_API_KEY }}" \
             --smtp_server smtp.qq.com --smtp_port 465 \
             --sender 794509869@qq.com \
-            --receiver kinnnncaid@gmail.com \
+            --receiver 794509869@qq.com \
             --sender_password "${{ secrets.QQ_SMTP_PASSWORD }}" \
             --num_workers 4 \
             --title "HTGR & Detection Daily" \
