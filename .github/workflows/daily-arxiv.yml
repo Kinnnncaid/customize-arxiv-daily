@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install requests openai
+          pip install requests openai bs4 beautifulsoup4 lxml
         
 
       - name: Run arXiv Daily
