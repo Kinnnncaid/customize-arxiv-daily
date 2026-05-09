@@ -36,7 +36,7 @@ jobs:
             --smtp_server smtp.gmail.com --smtp_port 465 \
             --sender kinnnncaid@gmail.com \
             --receiver kinnnncaid@gmail.com \
-            --sender_password ${{ secrets.GMAIL_APP_PASSWORD }} \
+            --sender_password "${{ secrets.GMAIL_APP_PASSWORD }}" \
             --num_workers 4 \
             --title "HTGR & Detection Daily" \
             --temperature 0.7 \
