@@ -1,10 +1,16 @@
-I am working on the research area of computer vision and natural language processing. 
-Specifically, I am interested in the following fieds:
-1. Object detection
-2. AIGC (AI Generated Content)
-3. Multimodal Large Language Models
+I am a nuclear engineering graduate student working on fission product transport in high-temperature gas-cooled reactors (HTGRs).
 
-I'm not interested in the following fields:
-1. 3D Vision
-2. Robotics
-3. Low-level Vision
+My primary research interests are:
+
+1. Fission product diffusion and transport in HTGR fuel elements (TRISO particles, fuel compacts, graphite matrix). This includes Cs-137 and other metallic fission product release modeling, boundary condition formulations for diffusion equations (Robin/third-type boundary conditions, non-equilibrium kinetic models, surface concentration-based coupling), surface adsorption/desorption kinetics (Langmuir isotherms, Henry's law), mass transfer coefficients (Sherwood-Reynolds-Schmidt correlations), and diffusion coefficient correlations in nuclear graphite. Relevant code systems include FRESCO, COPA-FPREL, TRAFIC, PADLOC, and similar HTGR fission product release codes.
+
+2. Radiation-hardened thermocouples and high-temperature sensors for advanced nuclear reactors (Generation IV reactors, molten salt reactors, fusion reactors). This includes irradiation effects on thermocouple performance (drift, decalibration, transmutation), novel thermocouple materials for extreme radiation and temperature environments, and in-core instrumentation development.
+
+3. Beta radiation detection and discrimination in high gamma-ray backgrounds. This includes anti-gamma or gamma-insensitive beta detectors, pulse shape discrimination (PSD) techniques for beta/gamma separation, scintillator materials with intrinsic gamma rejection (e.g., plastic scintillators, thin inorganic crystals), phoswich detector configurations, and digital signal processing methods for real-time beta/gamma discrimination.
+
+I am NOT interested in:
+1. Fusion plasma physics or tokamak engineering (unless related to in-vessel instrumentation or diagnostics)
+2. Medical physics or radiation therapy applications
+3. Particle physics (collider experiments, dark matter searches)
+4. Machine learning methods that are purely algorithmic without specific nuclear/radiation detection applications
+5. Nuclear policy, nonproliferation, or safeguards
