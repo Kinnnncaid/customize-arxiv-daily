@@ -32,16 +32,16 @@ jobs:
             --provider SiliconFlow \
             --model deepseek-ai/DeepSeek-V3 \
             --base_url https://api.siliconflow.cn/v1 \
-            --api_key ${{ secrets.SILICONFLOW_API_KEY }} \
-            --smtp_server smtp.gmail.com --smtp_port 465 \
-            --sender kinnnncaid@gmail.com \
+            --api_key "${{ secrets.SILICONFLOW_API_KEY }}" \
+            --smtp_server smtp.qq.com --smtp_port 465 \
+            --sender 794509869@qq.com \
             --receiver kinnnncaid@gmail.com \
-            --sender_password "${{ secrets.GMAIL_APP_PASSWORD }}" \
+            --sender_password "${{ secrets.QQ_SMTP_PASSWORD }}" \
             --num_workers 4 \
             --title "HTGR & Detection Daily" \
             --temperature 0.7 \
             --save
-
+            
       - name: Save history
         if: always()
         run: |
