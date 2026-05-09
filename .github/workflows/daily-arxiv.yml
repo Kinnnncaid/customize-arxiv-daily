@@ -1,0 +1,49 @@
+name: Daily arXiv Recommendations
+
+on:
+  schedule:
+    # 每天 UTC 0:00 运行（北京时间早上 8:00）
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 允许手动触发，方便测试
+
+jobs:
+  arxiv-daily:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run arXiv Daily
+        run: |
+          python main.py \
+            --categories nucl-ex nucl-th physics.ins-det physics.app-ph \
+            --provider SiliconFlow \
+            --model deepseek-ai/DeepSeek-V3 \
+            --base_url https://api.siliconflow.cn/v1 \
+            --api_key ${{ secrets.SILICONFLOW_API_KEY }} \
+            --smtp_server smtp.gmail.com --smtp_port 465 \
+            --sender kinnnncaid@gmail.com \
+            --receiver kinnnncaid@gmail.com \
+            --sender_password ${{ secrets.GMAIL_APP_PASSWORD }} \
+            --num_workers 4 \
+            --title "HTGR & Detection Daily" \
+            --temperature 0.7 \
+            --save
+
+      - name: Save history
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A arxiv_history/ || true
+          git diff --cached --quiet || git commit -m "Update arxiv history $(date +%Y-%m-%d)"
+          git push || true
